@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<meta name="Author" content="Zhenyu Huang">
+<title>My test page</title>
+{% endblock %}
+
+{% block body %}
+<div class ="content" style="margin: 0 auto; text-align: center">
+    <center>
+        <h1>Task Master</h1>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Added</th>
+                <th>Actions</th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td> {{ task.content }}</td>
+                <td> {{ task.date_created.date() }}</td>
+                <td style= "text-align:center">
+                    <a href="">Delete</a>
+                    <br>
+                    <a href="">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br></br>
+        <form action="/" method="POST">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Add Task">
+        </form>
+
+    </center>
+</div>
+{% endblock %}
