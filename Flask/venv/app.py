@@ -1,3 +1,6 @@
+#For deployment -> pip3 freeze > requirements.txt for the version requirements of library dependencies
+#need to add a Procfile for gunicorn deployment - web: gunicorn app:"app name here"
+
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
